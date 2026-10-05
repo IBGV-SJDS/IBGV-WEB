@@ -1,0 +1,4 @@
+window.IBGV_CONFIG = {
+  SUPABASE_URL: 'https://phnuczicfbrjnhjakpgc.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBobnVjemljZmJyam5oamFrcGdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEyMDg3NzIsImV4cCI6MjEwNjc4NDc3Mn0.mpJwfNg7nLBlrWw3_XHamDflRoh1MqfWcQH69bkyht4'
+};
