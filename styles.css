@@ -360,3 +360,18 @@
     max-width:300px !important;
   }
 }
+
+/* PORTADA PRINCIPAL v9 */
+
+.portada-principal{
+  width:100%;
+  background:#07284a;
+  overflow:hidden;
+}
+
+.portada-principal img{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0;
+}
