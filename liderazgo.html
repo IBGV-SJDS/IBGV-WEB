@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Liderazgo | Iglesia Bíblica Gracia y Verdad</title>
+
+  <link rel="stylesheet" href="styles.css?v=7">
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html">
+      <img src="logo.jpg" alt="Logo IBGV">
+    </a>
+
+    <strong>IGLESIA BÍBLICA GRACIA Y VERDAD</strong>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="creemos.html">Lo que creemos</a>
+      <a href="sermones.html">Sermones</a>
+      <a href="liderazgo.html">Liderazgo</a>
+      <a href="galeria.html">Fotos</a>
+      <a href="index.html#reuniones">Reuniones</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="sermons-header">
+
+  <h1>Liderazgo</h1>
+
+  <p>
+    Conoce a quienes sirven a nuestra congregación
+    mediante la enseñanza, el pastoreo y el cuidado de la iglesia.
+  </p>
+
+</section>
+
+
+<main class="wrap">
+
+  <div id="leadership-list" class="cards">
+
+    <p class="muted">
+      Cargando información de liderazgo...
+    </p>
+
+  </div>
+
+
+  <div style="margin-top:40px;">
+
+    <a class="btn" href="index.html">
+      ← Volver al inicio
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
+  © <span id="year"></span>
+  Iglesia Bíblica Gracia y Verdad
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="liderazgo.js?v=7"></script>
+
+<script>
+  const menuButton = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelector('.links');
+
+  if (menuButton && menuLinks) {
+
+    menuButton.addEventListener('click', () => {
+
+      const abierto = menuLinks.classList.toggle('open');
+
+      menuButton.setAttribute(
+        'aria-expanded',
+        abierto
+      );
+
+      menuButton.textContent = abierto ? '✕' : '☰';
+
+    });
+
+    menuLinks.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        menuLinks.classList.remove('open');
+
+        menuButton.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+        menuButton.textContent = '☰';
+
+      });
+
+    });
+
+  }
+</script>
+
+</body>
+</html>
