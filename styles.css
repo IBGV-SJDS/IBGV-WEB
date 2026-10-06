@@ -375,3 +375,34 @@
   height:auto;
   margin:0;
 }
+
+/* CORRECCIÓN PORTADA v9.1 */
+
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+.portada-principal{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+  overflow:hidden !important;
+}
+
+.portada-principal img{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  margin:0 !important;
+  padding:0 !important;
+}
