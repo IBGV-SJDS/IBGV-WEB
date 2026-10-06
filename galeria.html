@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Fotos | Iglesia Bíblica Gracia y Verdad</title>
+
+  <link rel="stylesheet" href="styles.css?v=6">
+
+  <style>
+    .gallery-header{
+      background:var(--navy);
+      color:white;
+      text-align:center;
+      padding:70px 20px;
+    }
+
+    .gallery-header h1{
+      font:700 clamp(38px,5vw,58px)/1.1 Georgia,serif;
+      margin:0 0 12px;
+    }
+
+    .gallery-header p{
+      max-width:720px;
+      margin:auto;
+      font-size:18px;
+      line-height:1.6;
+      color:var(--cream);
+    }
+
+    .gallery-intro{
+      max-width:800px;
+      margin:0 auto 40px;
+      text-align:center;
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .back-home{
+      margin-top:40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html">
+      <img src="logo.jpg" alt="Logo IBGV">
+    </a>
+
+    <strong>IGLESIA BÍBLICA GRACIA Y VERDAD</strong>
+
+    <nav class="links">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="creemos.html">Lo que creemos</a>
+      <a href="sermones.html">Sermones</a>
+      <a href="index.html#liderazgo">Liderazgo</a>
+      <a href="galeria.html">Fotos</a>
+      <a href="index.html#reuniones">Reuniones</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="gallery-header">
+
+  <h1>Fotos</h1>
+
+  <p>
+    Momentos de nuestra vida como iglesia.
+  </p>
+
+</section>
+
+
+<main class="wrap">
+
+  <div class="gallery-intro">
+    <p>
+      Compartimos algunos momentos de nuestra comunión,
+      adoración y servicio como iglesia local.
+    </p>
+  </div>
+
+
+  <div id="album-list" class="gallery">
+
+    <p class="muted">
+      Cargando álbumes...
+    </p>
+
+  </div>
+
+
+  <div class="back-home">
+
+    <a class="btn" href="index.html">
+      ← Volver al inicio
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
+  © <span id="year"></span>
+  Iglesia Bíblica Gracia y Verdad
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="galeria.js?v=6"></script>
+
+</body>
+</html>
