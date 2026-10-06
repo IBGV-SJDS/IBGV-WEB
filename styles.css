@@ -315,3 +315,48 @@
     max-height:250px;
   }
 }
+
+/* AJUSTE FINO PORTADA v8.2 */
+
+.home-hero-main{
+  grid-template-columns:38% 62% !important;
+  min-height:500px;
+}
+
+.home-hero-brand{
+  padding:35px 45px;
+  justify-content:center;
+  gap:0;
+}
+
+.home-hero-brand .home-logo{
+  width:100% !important;
+  max-width:370px !important;
+  max-height:250px;
+  margin:0 auto;
+}
+
+.home-tagline{
+  margin:18px 0 22px;
+  font-size:20px;
+}
+
+.home-hero-photo{
+  min-height:500px;
+  background-position:center center !important;
+}
+
+@media(max-width:720px){
+
+  .home-hero-photo{
+    min-height:350px;
+  }
+
+  .home-hero-brand{
+    padding:28px 22px 34px;
+  }
+
+  .home-hero-brand .home-logo{
+    max-width:300px !important;
+  }
+}
