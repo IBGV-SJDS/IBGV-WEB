@@ -122,6 +122,25 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script src="galeria.js?v=6"></script>
+<script>
+  const menuButton = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelector('.links');
 
+  if (menuButton && menuLinks) {
+    menuButton.addEventListener('click', () => {
+      const abierto = menuLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', abierto);
+      menuButton.textContent = abierto ? '✕' : '☰';
+    });
+
+    menuLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = '☰';
+      });
+    });
+  }
+</script>
 </body>
 </html>
