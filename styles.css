@@ -406,3 +406,39 @@ body{
   margin:0 !important;
   padding:0 !important;
 }
+
+/* HEADER MÓVIL COMPACTO v9.2 */
+
+@media(max-width:720px){
+
+  header .nav{
+    min-height:82px;
+    padding:9px 16px;
+    display:grid;
+    grid-template-columns:58px 1fr 48px;
+    align-items:center;
+    gap:10px;
+  }
+
+  header .nav > img{
+    width:58px;
+    height:58px;
+    margin:0;
+  }
+
+  header .nav > strong{
+    font-size:15px;
+    line-height:1.2;
+    margin:0;
+  }
+
+  .menu-toggle{
+    margin:0;
+    justify-self:end;
+    font-size:30px;
+  }
+
+  header .links{
+    grid-column:1 / -1;
+  }
+}
