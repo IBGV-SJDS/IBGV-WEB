@@ -4,20 +4,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>Iglesia Bíblica Gracia y Verdad</title>
- <link rel="stylesheet" href="styles.css?v=7">
+
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
+
 <body>
+
 <header>
   <div class="nav">
 
     <img src="logo.jpg" alt="Logo IBGV">
 
-   
-</button>
-     <strong>IGLESIA BÍBLICA GRACIA Y VERDAD</strong>
-<button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
-  ☰
+    <strong>IGLESIA BÍBLICA GRACIA Y VERDAD</strong>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false">
+      ☰
+    </button>
+
     <nav class="links">
       <a href="#nosotros">Nosotros</a>
       <a href="creemos.html">Lo que creemos</a>
@@ -69,9 +78,11 @@
   </p>
 
   <div style="margin-top:22px;">
+
     <a class="btn secondary" href="creemos.html">
       Conoce lo que creemos →
     </a>
+
   </div>
 
 </section>
@@ -155,6 +166,7 @@
     frente a las bombas de ENACAL, San Juan del Sur.
   </p>
 
+
   <div class="actions">
 
     <a
@@ -166,6 +178,7 @@
       Escríbenos por WhatsApp
     </a>
 
+
     <a
       id="maps"
       class="btn secondary"
@@ -176,6 +189,7 @@
     </a>
 
   </div>
+
 
   <div id="socials" class="socials"></div>
 
@@ -191,28 +205,66 @@
 </footer>
 
 
+<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Configuración IBGV -->
 <script src="config.js"></script>
+
+<!-- Contenido dinámico -->
 <script src="site.js?v=6"></script>
+
+
+<!-- Menú móvil -->
 <script>
-  const menuButton = document.querySelector('.menu-toggle');
-  const menuLinks = document.querySelector('.links');
+
+  const menuButton =
+    document.querySelector('.menu-toggle');
+
+  const menuLinks =
+    document.querySelector('.links');
+
 
   if (menuButton && menuLinks) {
+
     menuButton.addEventListener('click', () => {
-      const abierto = menuLinks.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', abierto);
-      menuButton.textContent = abierto ? '✕' : '☰';
+
+      const abierto =
+        menuLinks.classList.toggle('open');
+
+      menuButton.setAttribute(
+        'aria-expanded',
+        abierto
+      );
+
+      menuButton.textContent =
+        abierto ? '✕' : '☰';
+
     });
 
-    menuLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.textContent = '☰';
+
+    menuLinks
+      .querySelectorAll('a')
+      .forEach(link => {
+
+        link.addEventListener('click', () => {
+
+          menuLinks.classList.remove('open');
+
+          menuButton.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+          menuButton.textContent = '☰';
+
+        });
+
       });
-    });
+
   }
+
 </script>
+
 </body>
 </html>
