@@ -7,7 +7,7 @@
 
   <title>Iglesia Bíblica Gracia y Verdad</title>
 
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 
 <body>
@@ -28,6 +28,7 @@
     </button>
 
     <nav class="links">
+      <a href="index.html">Inicio</a>
       <a href="#nosotros">Nosotros</a>
       <a href="creemos.html">Lo que creemos</a>
       <a href="sermones.html">Sermones</a>
@@ -41,29 +42,72 @@
 </header>
 
 
-<section
-  class="hero"
-  aria-label="Congregación de Iglesia Bíblica Gracia y Verdad">
+<!-- PORTADA NUEVA -->
 
-  <div class="hero-content">
+<section class="home-hero">
 
-    <h1>
-      Iglesia Bíblica<br>
-      Gracia y Verdad
-    </h1>
+  <div class="home-hero-main">
 
-    <p>
-      Bautista Primitivo · San Juan del Sur
-    </p>
+    <div class="home-hero-brand">
 
-    <a class="btn" href="#reuniones">
-      Visítanos este domingo
-    </a>
+      <img
+        class="home-logo"
+        src="logo.jpg"
+        alt="Iglesia Bíblica Gracia y Verdad">
+
+      <p class="home-tagline">
+        Una comunidad cristiana local,<br>
+        centrada en Cristo y su Palabra.
+      </p>
+
+      <a class="btn" href="#reuniones">
+        VISÍTANOS ESTE DOMINGO →
+      </a>
+
+    </div>
+
+
+    <div
+      class="home-hero-photo"
+      role="img"
+      aria-label="Congregación de Iglesia Bíblica Gracia y Verdad">
+    </div>
+
+  </div>
+
+
+  <div class="home-info">
+
+    <div class="home-info-item">
+      <span class="home-info-icon">▣</span>
+      <div>
+        <strong>Domingo — Día del Señor</strong>
+        <span id="hero-sunday">10:00 a. m. – 2:00 p. m.</span>
+      </div>
+    </div>
+
+    <div class="home-info-item">
+      <span class="home-info-icon">♟</span>
+      <div>
+        <strong>Miércoles — Noche de Oración</strong>
+        <span id="hero-wednesday">7:00 p. m. – 8:00 p. m.</span>
+      </div>
+    </div>
+
+    <div class="home-info-item">
+      <span class="home-info-icon">●</span>
+      <div>
+        <strong>San Juan del Sur</strong>
+        <span>Rivas, Nicaragua</span>
+      </div>
+    </div>
 
   </div>
 
 </section>
 
+
+<!-- NOSOTROS -->
 
 <section id="nosotros" class="wrap">
 
@@ -77,16 +121,39 @@
     y una vida centrada en el evangelio de Jesucristo.
   </p>
 
-  <div style="margin-top:22px;">
 
-    <a class="btn secondary" href="creemos.html">
-      Conoce lo que creemos →
+  <div class="home-paths">
+
+    <a class="home-path" href="creemos.html">
+      <strong>Lo que creemos</strong>
+      <span>Conoce nuestra fe y convicciones bíblicas.</span>
+      <b>Conocer →</b>
+    </a>
+
+    <a class="home-path" href="sermones.html">
+      <strong>Sermones</strong>
+      <span>Escucha la predicación de la Palabra de Dios.</span>
+      <b>Escuchar →</b>
+    </a>
+
+    <a class="home-path" href="liderazgo.html">
+      <strong>Liderazgo</strong>
+      <span>Conoce a quienes sirven pastoralmente a la iglesia.</span>
+      <b>Conocer →</b>
+    </a>
+
+    <a class="home-path" href="galeria.html">
+      <strong>Fotos</strong>
+      <span>Momentos de nuestra vida como congregación.</span>
+      <b>Ver fotos →</b>
     </a>
 
   </div>
 
 </section>
 
+
+<!-- REUNIONES -->
 
 <section id="reuniones" class="band">
 
@@ -134,6 +201,8 @@
 </section>
 
 
+<!-- CONTACTO -->
+
 <section id="contacto" class="wrap">
 
   <h2 class="section-title">
@@ -144,7 +213,6 @@
     Del Supermercado Palí, 25 metros al Este,
     frente a las bombas de ENACAL, San Juan del Sur.
   </p>
-
 
   <div class="actions">
 
@@ -157,7 +225,6 @@
       Escríbenos por WhatsApp
     </a>
 
-
     <a
       id="maps"
       class="btn secondary"
@@ -168,7 +235,6 @@
     </a>
 
   </div>
-
 
   <div id="socials" class="socials"></div>
 
@@ -184,25 +250,17 @@
 </footer>
 
 
-<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<!-- Configuración IBGV -->
 <script src="config.js"></script>
-
-<!-- Contenido dinámico -->
-<script src="site.js?v=6"></script>
+<script src="site.js?v=8"></script>
 
 
-<!-- Menú móvil -->
 <script>
-
   const menuButton =
     document.querySelector('.menu-toggle');
 
   const menuLinks =
     document.querySelector('.links');
-
 
   if (menuButton && menuLinks) {
 
@@ -242,7 +300,6 @@
       });
 
   }
-
 </script>
 
 </body>
