@@ -10,6 +10,7 @@
   <meta name="description" content="Iglesia Bíblica Gracia y Verdad es una iglesia Bautista Reformada en San Juan del Sur, Nicaragua. Sostenemos las doctrinas históricas de la Reforma, las doctrinas de la gracia y la suficiencia de las Escrituras.">
 
   <link rel="stylesheet" href="styles.css?v=13">
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,17 +28,10 @@
     "addressCountry": "NI"
   }
 }
-</script>
-</head>
-<link rel="stylesheet" href="styles.css?v=13">
-
-<script type="application/ld+json">
-{
-  ...
-}
-</script>
+  </script>
 
 </head>
+
 <body>
 
 <header>
@@ -108,15 +102,18 @@
 
 </section>
 
+
+<!-- NOSOTROS -->
+
 <section id="nosotros" class="wrap">
 
   <h2 class="section-title">
     Una iglesia centrada en la Palabra
   </h2>
-<p id="about">
-  Somos una congregación cristiana que desea glorificar a Dios mediante la predicación de su Palabra, la comunión de los santos y una vida centrada en el evangelio de Jesucristo.
-</p>
 
+  <p id="about">
+    Somos una congregación cristiana que desea glorificar a Dios mediante la predicación de su Palabra, la comunión de los santos y una vida centrada en el evangelio de Jesucristo.
+  </p>
 
   <div class="home-paths">
 
@@ -163,9 +160,7 @@
 
       <div class="card">
 
-        <h3>
-          Domingo — Día del Señor
-        </h3>
+        <h3>Domingo — Día del Señor</h3>
 
         <p id="sunday">
           10:00 a. m. – 2:00 p. m.
@@ -177,12 +172,9 @@
 
       </div>
 
-
       <div class="card">
 
-        <h3>
-          Miércoles — Noche de Oración
-        </h3>
+        <h3>Miércoles — Noche de Oración</h3>
 
         <p id="wednesday">
           7:00 p. m. – 8:00 p. m.
@@ -246,10 +238,14 @@
 </footer>
 
 
+<!-- SUPABASE -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script src="site.js?v=8"></script>
 
+
+<!-- MENÚ MÓVIL -->
 
 <script>
   const menuButton =
@@ -274,7 +270,6 @@
         abierto ? '✕' : '☰';
 
     });
-
 
     menuLinks
       .querySelectorAll('a')
