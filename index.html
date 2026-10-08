@@ -408,7 +408,9 @@
       Number(valor("hour")) * 60 +
       Number(valor("minute"));
 
-    return true; // PRUEBA TEMPORAL
+   return sabado &&
+  minutos >= 478 &&
+  minutos < 512;
   }
 
   function revisarHorario() {
