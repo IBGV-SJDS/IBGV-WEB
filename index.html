@@ -1,16 +1,17 @@
+
 <!doctype html>
 <html lang="es">
 
 <head>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3S7TTVSBT8');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3S7TTVSBT8');
+  </script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -21,28 +22,31 @@
 
   <link rel="stylesheet" href="styles.css?v=13">
 
+  <!-- Datos estructurados para Google -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Church",
-  "name": "Iglesia Bíblica Gracia y Verdad",
-  "alternateName": "IBGV",
-  "description": "Iglesia Bautista Primitiva en San Juan del Sur, Nicaragua. Sostenemos las doctrinas históricas de la Reforma protestante, las doctrinas de la gracia, la suficiencia y autoridad de las Escrituras, y una teología bautista confesional conforme a la Confesión Bautista de Fe de Londres de 1689.",
-  "url": "https://ibgv-sjds.github.io/ibgv-web/",
-  "telephone": "+50589855856",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Del Supermercado Palí, 25 metros al Este, frente a las bombas de ENACAL",
-    "addressLocality": "San Juan del Sur",
-    "addressRegion": "Rivas",
-    "addressCountry": "NI"
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Iglesia Bíblica Gracia y Verdad",
+    "alternateName": "IBGV",
+    "description": "Iglesia Bautista Primitiva en San Juan del Sur, Nicaragua. Sostenemos las doctrinas históricas de la Reforma protestante, las doctrinas de la gracia, la suficiencia y autoridad de las Escrituras, y una teología bautista confesional conforme a la Confesión Bautista de Fe de Londres de 1689.",
+    "url": "https://ibgv-sjds.github.io/ibgv-web/",
+    "telephone": "+50589855856",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Del Supermercado Palí, 25 metros al Este, frente a las bombas de ENACAL",
+      "addressLocality": "San Juan del Sur",
+      "addressRegion": "Rivas",
+      "addressCountry": "NI"
+    }
   }
-}
   </script>
 
 </head>
 
 <body>
+
+<!-- ENCABEZADO -->
 
 <header>
   <div class="nav">
@@ -67,6 +71,7 @@
       <a href="liderazgo.html">Liderazgo</a>
       <a href="galeria.html">Fotos</a>
       <a href="#reuniones">Reuniones</a>
+      <a href="#radio-ibgv">Radio</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
@@ -198,24 +203,61 @@
 
 </section>
 
-<!-- PROGRAMA RADIAL: SOLO POR GRACIA -->
-<section id="radio-ibgv" style="padding:40px 20px;text-align:center;">
-  <h2>📻 Solo por Gracia</h2>
-  <p>Programa radial de Iglesia Bíblica Gracia y Verdad</p>
-  <p>Por Radio Rumbos 96.9 FM</p>
-  <p><strong>Sábados | 8:00 a 8:30 a. m.</strong></p>
 
-  <p id="radio-estado">Comprobando horario...</p>
+<!-- PROGRAMA RADIAL: SOLO POR GRACIA -->
+
+<section
+  id="radio-ibgv"
+  class="wrap"
+  style="padding-top:45px;padding-bottom:45px;text-align:center;">
+
+  <h2 class="section-title">
+    📻 Solo por Gracia
+  </h2>
+
+  <p>
+    Programa radial de Iglesia Bíblica Gracia y Verdad
+  </p>
+
+  <p>
+    Transmitido por <strong>Radio Rumbos 96.9 FM</strong>
+  </p>
+
+  <p>
+    <strong>Todos los sábados, de 8:00 a 8:30 a. m.</strong>
+  </p>
+
+  <p id="radio-estado" aria-live="polite">
+    Comprobando horario de transmisión...
+  </p>
 
   <div id="radio-controles" hidden>
-    <audio id="radio-audio" controls preload="none">
+
+    <p>
+      <strong>🔴 Transmisión en vivo</strong>
+    </p>
+
+    <audio
+      id="radio-audio"
+      controls
+      preload="none"
+      style="width:100%;max-width:420px;">
       <source
         src="https://stream9.mexiserver.com:8156/stream"
         type="audio/mpeg">
       Tu navegador no admite audio HTML5.
     </audio>
+
+    <p style="font-size:13px;">
+      Presiona reproducir para escuchar nuestro programa.
+    </p>
+
   </div>
+
 </section>
+
+
+<!-- CONTROL AUTOMÁTICO DEL HORARIO RADIAL -->
 
 <script>
 (function () {
@@ -223,7 +265,13 @@
   const controles = document.getElementById("radio-controles");
   const estado = document.getElementById("radio-estado");
 
-  function revisarHorario() {
+  const STREAM_URL =
+    "https://stream9.mexiserver.com:8156/stream";
+
+  let disponibleAnterior = false;
+
+  function estaEnHorario() {
+
     const partes = new Intl.DateTimeFormat("en-US", {
       timeZone: "America/Managua",
       weekday: "short",
@@ -236,28 +284,92 @@
       partes.find(p => p.type === tipo)?.value;
 
     const sabado = valor("weekday") === "Sat";
+
     const minutos =
       Number(valor("hour")) * 60 +
       Number(valor("minute"));
 
-    const disponible =
-      sabado &&
+    // 7:58 a. m. hasta antes de 8:32 a. m.
+    return sabado &&
       minutos >= 478 &&
       minutos < 512;
+  }
+
+  function revisarHorario() {
+
+    const disponible = estaEnHorario();
 
     controles.hidden = !disponible;
 
     if (disponible) {
+
       estado.textContent =
         "🔴 ¡Estamos al aire! Escuchá Solo por Gracia.";
-  } else {
-  audio.pause();
 
-  estado.textContent =
-    "Próxima transmisión: sábado, 8:00 a. m.";
-}
-  revisarHorario();
-  setInterval(revisarHorario, 1000);
+      if (!disponibleAnterior) {
+        audio.load();
+      }
+
+    } else {
+
+      if (!audio.paused) {
+        audio.pause();
+      }
+
+      // Desconectar la transmisión fuera del horario.
+      if (audio.hasAttribute("src")) {
+        audio.removeAttribute("src");
+      }
+
+      const fuente = audio.querySelector("source");
+
+      if (fuente && fuente.hasAttribute("src")) {
+        fuente.removeAttribute("src");
+        audio.load();
+      }
+
+      estado.textContent =
+        "📅 Próxima transmisión: sábado, 8:00 a. m.";
+    }
+
+    disponibleAnterior = disponible;
+  }
+
+  // Verificar el horario antes de iniciar audio.
+  audio.addEventListener("play", function () {
+
+    if (!estaEnHorario()) {
+      audio.pause();
+      revisarHorario();
+    }
+
+  });
+
+  // Comprobar cuando el visitante regresa a la pestaña.
+  document.addEventListener("visibilitychange", revisarHorario);
+
+  window.addEventListener("focus", revisarHorario);
+
+  // Recuperar la fuente solamente durante el horario.
+  function sincronizarRadio() {
+
+    const disponible = estaEnHorario();
+    const fuente = audio.querySelector("source");
+
+    if (disponible && fuente &&
+        !fuente.hasAttribute("src")) {
+
+      fuente.setAttribute("src", STREAM_URL);
+      audio.load();
+    }
+
+    revisarHorario();
+  }
+
+  sincronizarRadio();
+
+  setInterval(sincronizarRadio, 1000);
+
 })();
 </script>
 
@@ -301,6 +413,8 @@
 
 </section>
 
+
+<!-- PIE DE PÁGINA -->
 
 <footer>
 
