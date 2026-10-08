@@ -198,6 +198,69 @@
 
 </section>
 
+<!-- PROGRAMA RADIAL: SOLO POR GRACIA -->
+<section id="radio-ibgv" style="padding:40px 20px;text-align:center;">
+  <h2>📻 Solo por Gracia</h2>
+  <p>Programa radial de Iglesia Bíblica Gracia y Verdad</p>
+  <p>Por Radio Rumbos 96.9 FM</p>
+  <p><strong>Sábados | 8:00 a 8:30 a. m.</strong></p>
+
+  <p id="radio-estado">Comprobando horario...</p>
+
+  <div id="radio-controles" hidden>
+    <audio id="radio-audio" controls preload="none">
+      <source
+        src="https://stream9.mexiserver.com:8156/stream"
+        type="audio/mpeg">
+      Tu navegador no admite audio HTML5.
+    </audio>
+  </div>
+</section>
+
+<script>
+(function () {
+  const audio = document.getElementById("radio-audio");
+  const controles = document.getElementById("radio-controles");
+  const estado = document.getElementById("radio-estado");
+
+  function revisarHorario() {
+    const partes = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Managua",
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date());
+
+    const valor = tipo =>
+      partes.find(p => p.type === tipo)?.value;
+
+    const sabado = valor("weekday") === "Sat";
+    const minutos =
+      Number(valor("hour")) * 60 +
+      Number(valor("minute"));
+
+    const disponible =
+      sabado &&
+      minutos >= 478 &&
+      minutos < 512;
+
+    controles.hidden = !disponible;
+
+    if (disponible) {
+      estado.textContent =
+        "🔴 ¡Estamos al aire! Escuchá Solo por Gracia.";
+  } else {
+  audio.pause();
+
+  estado.textContent =
+    "Próxima transmisión: sábado, 8:00 a. m.";
+}
+  revisarHorario();
+  setInterval(revisarHorario, 1000);
+})();
+</script>
+
 
 <!-- CONTACTO -->
 
