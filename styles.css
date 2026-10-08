@@ -707,3 +707,39 @@ textarea{
   }
 
 }
+
+
+/* CONTACTO Y PROGRAMA RADIAL */
+
+.contacto-radio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.contacto-columna,
+.radio-columna {
+  min-width: 0;
+}
+
+.radio-columna p {
+  line-height: 1.7;
+}
+
+#radio-controles {
+  margin-top: 20px;
+}
+
+#radio-audio {
+  width: 100%;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 768px) {
+  .contacto-radio-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
