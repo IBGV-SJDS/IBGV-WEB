@@ -3,8 +3,16 @@
 <html lang="es">
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Analytics -->
+  <title>Iglesia Bautista Reformada en San Juan del Sur | Iglesia Bíblica Gracia y Verdad</title>
+
+  <meta name="description" content="Iglesia Bíblica Gracia y Verdad es una iglesia Bautista Reformada en San Juan del Sur, Nicaragua. Sostenemos las doctrinas históricas de la Reforma, las doctrinas de la gracia y la suficiencia de las Escrituras.">
+
+  <link rel="stylesheet" href="styles.css?v=14">
+
+  <!-- GOOGLE ANALYTICS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,16 +21,7 @@
     gtag('config', 'G-3S7TTVSBT8');
   </script>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <title>Iglesia Bautista Reformada en San Juan del Sur | Iglesia Bíblica Gracia y Verdad</title>
-
-  <meta name="description" content="Iglesia Bíblica Gracia y Verdad es una iglesia Bautista Reformada en San Juan del Sur, Nicaragua. Sostenemos las doctrinas históricas de la Reforma, las doctrinas de la gracia y la suficiencia de las Escrituras.">
-
-  <link rel="stylesheet" href="styles.css?v=14">
-
-  <!-- Datos estructurados para Google -->
+  <!-- DATOS ESTRUCTURADOS -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,6 +40,41 @@
     }
   }
   </script>
+
+  <!-- DISEÑO DE CONTACTO Y RADIO -->
+  <style>
+    .contacto-radio-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contacto-columna,
+    .radio-columna {
+      min-width: 0;
+    }
+
+    .radio-columna p {
+      line-height: 1.7;
+    }
+
+    #radio-controles {
+      margin-top: 20px;
+    }
+
+    #radio-audio {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    @media (max-width: 768px) {
+      .contacto-radio-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+  </style>
 
 </head>
 
@@ -203,123 +237,6 @@
 
 </section>
 
-<!-- CONTROL AUTOMÁTICO DEL HORARIO RADIAL -->
-
-<script>
-(function () {
-  const audio = document.getElementById("radio-audio");
-  const controles = document.getElementById("radio-controles");
-  const estado = document.getElementById("radio-estado");
-
-  const STREAM_URL =
-    "https://stream9.mexiserver.com:8156/stream";
-
-  let disponibleAnterior = false;
-
-  function estaEnHorario() {
-
-    const partes = new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/Managua",
-      weekday: "short",
-      hour: "2-digit",
-      minute: "2-digit",
-      hourCycle: "h23"
-    }).formatToParts(new Date());
-
-    const valor = tipo =>
-      partes.find(p => p.type === tipo)?.value;
-
-    const sabado = valor("weekday") === "Sat";
-
-    const minutos =
-      Number(valor("hour")) * 60 +
-      Number(valor("minute"));
-
-    // 7:58 a. m. hasta antes de 8:32 a. m.
-    return sabado &&
-      minutos >= 478 &&
-      minutos < 512;
-  }
-
-  function revisarHorario() {
-
-    const disponible = estaEnHorario();
-
-    controles.hidden = !disponible;
-
-    if (disponible) {
-
-      estado.textContent =
-        "🔴 ¡Estamos al aire! Escuchá Solo por Gracia.";
-
-      if (!disponibleAnterior) {
-        audio.load();
-      }
-
-    } else {
-
-      if (!audio.paused) {
-        audio.pause();
-      }
-
-      // Desconectar la transmisión fuera del horario.
-      if (audio.hasAttribute("src")) {
-        audio.removeAttribute("src");
-      }
-
-      const fuente = audio.querySelector("source");
-
-      if (fuente && fuente.hasAttribute("src")) {
-        fuente.removeAttribute("src");
-        audio.load();
-      }
-
-      estado.textContent =
-        "📅 Próxima transmisión: sábado, 8:00 a. m.";
-    }
-
-    disponibleAnterior = disponible;
-  }
-
-  // Verificar el horario antes de iniciar audio.
-  audio.addEventListener("play", function () {
-
-    if (!estaEnHorario()) {
-      audio.pause();
-      revisarHorario();
-    }
-
-  });
-
-  // Comprobar cuando el visitante regresa a la pestaña.
-  document.addEventListener("visibilitychange", revisarHorario);
-
-  window.addEventListener("focus", revisarHorario);
-
-  // Recuperar la fuente solamente durante el horario.
-  function sincronizarRadio() {
-
-    const disponible = estaEnHorario();
-    const fuente = audio.querySelector("source");
-
-    if (disponible && fuente &&
-        !fuente.hasAttribute("src")) {
-
-      fuente.setAttribute("src", STREAM_URL);
-      audio.load();
-    }
-
-    revisarHorario();
-  }
-
-  sincronizarRadio();
-
-  setInterval(sincronizarRadio, 1000);
-
-})();
-</script>
-
-
 
 <!-- CONTACTO Y PROGRAMA RADIAL -->
 
@@ -363,6 +280,7 @@
 
     </div>
 
+
     <!-- SOLO POR GRACIA -->
     <div id="radio-ibgv" class="radio-columna">
 
@@ -389,11 +307,9 @@
         <audio
           id="radio-audio"
           controls
-          preload="none"
-          style="width:100%;max-width:420px;">
-          <source
-            src="https://stream9.mexiserver.com:8156/stream"
-            type="audio/mpeg">
+          preload="none">
+          <source type="audio/mpeg">
+          Tu navegador no admite audio HTML5.
         </audio>
 
       </div>
@@ -403,7 +319,6 @@
   </div>
 
 </section>
-
 
 
 <!-- PIE DE PÁGINA -->
@@ -422,6 +337,95 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 <script src="site.js?v=8"></script>
+
+
+<!-- CONTROL AUTOMÁTICO DE RADIO -->
+
+<script>
+(function () {
+
+  const audio = document.getElementById("radio-audio");
+  const controles = document.getElementById("radio-controles");
+  const estado = document.getElementById("radio-estado");
+  const fuente = audio.querySelector("source");
+
+  const STREAM_URL =
+    "https://stream9.mexiserver.com:8156/stream";
+
+  function estaEnHorario() {
+
+    const partes = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Managua",
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(new Date());
+
+    const valor = tipo =>
+      partes.find(p => p.type === tipo)?.value;
+
+    const sabado = valor("weekday") === "Sat";
+
+    const minutos =
+      Number(valor("hour")) * 60 +
+      Number(valor("minute"));
+
+    return sabado &&
+      minutos >= 478 &&
+      minutos < 512;
+  }
+
+  function revisarHorario() {
+
+    const disponible = estaEnHorario();
+
+    controles.hidden = !disponible;
+
+    if (disponible) {
+
+      estado.textContent =
+        "🔴 ¡Estamos al aire! Escuchá Solo por Gracia.";
+
+      if (!fuente.hasAttribute("src")) {
+        fuente.setAttribute("src", STREAM_URL);
+        audio.load();
+      }
+
+    } else {
+
+      audio.pause();
+
+      if (fuente.hasAttribute("src")) {
+        fuente.removeAttribute("src");
+        audio.load();
+      }
+
+      estado.textContent =
+        "📅 Próxima transmisión: sábado, 8:00 a. m.";
+    }
+  }
+
+  audio.addEventListener("play", function () {
+    if (!estaEnHorario()) {
+      audio.pause();
+      revisarHorario();
+    }
+  });
+
+  document.addEventListener(
+    "visibilitychange",
+    revisarHorario
+  );
+
+  window.addEventListener("focus", revisarHorario);
+
+  revisarHorario();
+
+  setInterval(revisarHorario, 1000);
+
+})();
+</script>
 
 
 <!-- MENÚ MÓVIL -->
