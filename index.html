@@ -203,60 +203,6 @@
 
 </section>
 
-
-<!-- PROGRAMA RADIAL: SOLO POR GRACIA -->
-
-<section
-  id="radio-ibgv"
-  class="wrap"
-  style="padding-top:45px;padding-bottom:45px;text-align:center;">
-
-  <h2 class="section-title">
-    📻 Solo por Gracia
-  </h2>
-
-  <p>
-    Programa radial de Iglesia Bíblica Gracia y Verdad
-  </p>
-
-  <p>
-    Transmitido por <strong>Radio Rumbos 96.9 FM</strong>
-  </p>
-
-  <p>
-    <strong>Todos los sábados, de 8:00 a 8:30 a. m.</strong>
-  </p>
-
-  <p id="radio-estado" aria-live="polite">
-    Comprobando horario de transmisión...
-  </p>
-
-  <div id="radio-controles" hidden>
-
-    <p>
-      <strong>🔴 Transmisión en vivo</strong>
-    </p>
-
-    <audio
-      id="radio-audio"
-      controls
-      preload="none"
-      style="width:100%;max-width:420px;">
-      <source
-        src="https://stream9.mexiserver.com:8156/stream"
-        type="audio/mpeg">
-      Tu navegador no admite audio HTML5.
-    </audio>
-
-    <p style="font-size:13px;">
-      Presiona reproducir para escuchar nuestro programa.
-    </p>
-
-  </div>
-
-</section>
-
-
 <!-- CONTROL AUTOMÁTICO DEL HORARIO RADIAL -->
 
 <script>
@@ -374,44 +320,90 @@
 </script>
 
 
-<!-- CONTACTO -->
+
+<!-- CONTACTO Y PROGRAMA RADIAL -->
 
 <section id="contacto" class="wrap">
 
-  <h2 class="section-title">
-    Visítanos
-  </h2>
+  <div class="contacto-radio-grid">
 
-  <p id="address">
-    Del Supermercado Palí, 25 metros al Este,
-    frente a las bombas de ENACAL, San Juan del Sur.
-  </p>
+    <!-- VISÍTANOS -->
+    <div class="contacto-columna">
 
-  <div class="actions">
+      <h2 class="section-title">Visítanos</h2>
 
-    <a
-      id="whatsapp"
-      class="btn"
-      href="https://wa.me/50589855856"
-      target="_blank"
-      rel="noopener">
-      Escríbenos por WhatsApp
-    </a>
+      <p id="address">
+        Del Supermercado Palí, 25 metros al Este,
+        frente a las bombas de ENACAL, San Juan del Sur.
+      </p>
 
-    <a
-      id="maps"
-      class="btn secondary"
-      href="#"
-      target="_blank"
-      rel="noopener">
-      Cómo llegar en Google Maps
-    </a>
+      <div class="actions">
+
+        <a
+          id="whatsapp"
+          class="btn"
+          href="https://wa.me/50589855856"
+          target="_blank"
+          rel="noopener">
+          Escríbenos por WhatsApp
+        </a>
+
+        <a
+          id="maps"
+          class="btn secondary"
+          href="#"
+          target="_blank"
+          rel="noopener">
+          Cómo llegar en Google Maps
+        </a>
+
+      </div>
+
+      <div id="socials" class="socials"></div>
+
+    </div>
+
+    <!-- SOLO POR GRACIA -->
+    <div id="radio-ibgv" class="radio-columna">
+
+      <h2 class="section-title">📻 Solo por Gracia</h2>
+
+      <p>
+        Programa radial de Iglesia Bíblica Gracia y Verdad.
+      </p>
+
+      <p>
+        <strong>Radio Rumbos 96.9 FM</strong>
+      </p>
+
+      <p>
+        Todos los sábados, de 8:00 a 8:30 a. m.
+      </p>
+
+      <p id="radio-estado" aria-live="polite">
+        Comprobando horario...
+      </p>
+
+      <div id="radio-controles" hidden>
+
+        <audio
+          id="radio-audio"
+          controls
+          preload="none"
+          style="width:100%;max-width:420px;">
+          <source
+            src="https://stream9.mexiserver.com:8156/stream"
+            type="audio/mpeg">
+        </audio>
+
+      </div>
+
+    </div>
 
   </div>
 
-  <div id="socials" class="socials"></div>
-
 </section>
+
 
 
 <!-- PIE DE PÁGINA -->
