@@ -10,7 +10,7 @@
 
   <meta name="description" content="Iglesia Bíblica Gracia y Verdad es una iglesia Bautista Reformada en San Juan del Sur, Nicaragua. Sostenemos las doctrinas históricas de la Reforma, las doctrinas de la gracia y la suficiencia de las Escrituras.">
 
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
 
   <!-- GOOGLE ANALYTICS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
@@ -313,9 +313,26 @@
         Todos los sábados, de 8:00 a 8:30 a. m.
       </p>
 
-      <p id="radio-estado" aria-live="polite">
-        Comprobando horario...
-      </p>
+    
+<div class="radio-estado-linea">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="20" height="20"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 6v6l4 2"/>
+  </svg>
+
+  <p id="radio-estado" aria-live="polite">
+    Comprobando horario...
+  </p>
+</div>
+
 
       <div id="radio-controles" hidden>
 
@@ -417,7 +434,7 @@
       }
 
       estado.textContent =
-        "📅 Próxima transmisión: sábado, 8:00 a. m.";
+  "Próxima transmisión: sábado, 8:00 a. m.";
     }
   }
 
