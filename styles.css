@@ -743,3 +743,21 @@ textarea{
     gap: 35px;
   }
 }
+
+
+/* ÍCONOS UNIFORMES DEL PROGRAMA RADIAL */
+
+.radio-estado-linea {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--navy);
+}
+
+.radio-estado-linea svg {
+  flex-shrink: 0;
+}
+
+.radio-estado-linea p {
+  margin: 0;
+}
