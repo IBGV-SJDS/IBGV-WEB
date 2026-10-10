@@ -1,29 +1,24 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://ibgv-sjds.github.io/ibgv-web/</loc>
+    <loc>https://iglesiabiblicagraciayverdad.org/</loc>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://ibgv-sjds.github.io/ibgv-web/creemos.html</loc>
+    <loc>https://iglesiabiblicagraciayverdad.org/creemos.html</loc>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://ibgv-sjds.github.io/ibgv-web/sermones.html</loc>
+    <loc>https://iglesiabiblicagraciayverdad.org/sermones.html</loc>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://ibgv-sjds.github.io/ibgv-web/liderazgo.html</loc>
+    <loc>https://iglesiabiblicagraciayverdad.org/liderazgo.html</loc>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://ibgv-sjds.github.io/ibgv-web/galeria.html</loc>
+    <loc>https://iglesiabiblicagraciayverdad.org/galeria.html</loc>
     <priority>0.7</priority>
   </url>
-
 </urlset>
