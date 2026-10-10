@@ -1,21 +1,26 @@
+
 <!doctype html>
 <html lang="es">
 
 <head>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3S7TTVSBT8');
-</script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Fotos | Iglesia Bíblica Gracia y Verdad</title>
+  <title>Galería de Fotos | Iglesia Bíblica Gracia y Verdad</title>
+
+  <meta name="description" content="Conoce nuestra galería de fotografías de Iglesia Bíblica Gracia y Verdad, una Iglesia Bautista Reformada en San Juan del Sur, Nicaragua. Momentos de adoración, comunión y servicio de nuestra congregación.">
+
+  <link rel="canonical" href="https://iglesiabiblicagraciayverdad.org/galeria.html">
+
+  <!-- Google Analytics - IBGV -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3S7TTVSBT8');
+  </script>
 
   <link rel="stylesheet" href="styles.css?v=6">
 
@@ -52,6 +57,7 @@
       margin-top:40px;
     }
   </style>
+
 </head>
 
 <body>
@@ -64,9 +70,15 @@
     </a>
 
     <strong>IGLESIA BÍBLICA GRACIA Y VERDAD</strong>
-<button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
-  ☰
-</button>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false">
+      ☰
+    </button>
+
     <nav class="links">
       <a href="index.html">Inicio</a>
       <a href="index.html#nosotros">Nosotros</a>
@@ -103,6 +115,7 @@
   </div>
 
 
+  <!-- Álbumes cargados dinámicamente desde Supabase -->
   <div id="album-list" class="gallery">
 
     <p class="muted">
@@ -129,9 +142,17 @@
 </footer>
 
 
+<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Configuración del sitio -->
 <script src="config.js"></script>
+
+<!-- Sistema de galería -->
 <script src="galeria.js?v=6"></script>
+
+
+<!-- Menú móvil -->
 <script>
   const menuButton = document.querySelector('.menu-toggle');
   const menuLinks = document.querySelector('.links');
@@ -152,5 +173,6 @@
     });
   }
 </script>
+
 </body>
 </html>
