@@ -1,23 +1,29 @@
+
 <!doctype html>
 <html lang="es">
 
 <head>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3S7TTVSBT8');
-</script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Liderazgo | Iglesia Bíblica Gracia y Verdad</title>
 
+  <meta name="description" content="Conoce el liderazgo de Iglesia Bíblica Gracia y Verdad, una Iglesia Bautista Reformada en San Juan del Sur, Nicaragua. Pastores y servidores dedicados a la enseñanza bíblica y al cuidado de la congregación.">
+
+  <link rel="canonical" href="https://iglesiabiblicagraciayverdad.org/liderazgo.html">
+
+  <!-- Google Analytics - IBGV -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3S7TTVSBT8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3S7TTVSBT8');
+  </script>
+
   <link rel="stylesheet" href="styles.css?v=7">
+
 </head>
 
 <body>
@@ -68,6 +74,7 @@
 
 <main class="wrap">
 
+  <!-- Información cargada dinámicamente desde Supabase -->
   <div id="leadership-list" class="cards">
 
     <p class="muted">
@@ -94,10 +101,17 @@
 </footer>
 
 
+<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Configuración del sitio -->
 <script src="config.js"></script>
+
+<!-- Sistema de liderazgo -->
 <script src="liderazgo.js?v=7"></script>
 
+
+<!-- Menú móvil -->
 <script>
   const menuButton = document.querySelector('.menu-toggle');
   const menuLinks = document.querySelector('.links');
